@@ -46,12 +46,12 @@ As a user, I want the ability to:
 
 ## Wireframes
 
-![Home Page](img/Tetris/1.png)
-![Instructions](img/Tetris/2.png)
-![Controls](img/Tetris/3.png)
-![Game](img/Tetris/4.png)
-![Game Over](img/Tetris/5.png)
-![Block Shapes](img/Tetris/6.png)
+![Home Page](img/1.png)
+![Instructions](img/2.png)
+![Controls](img/3.png)
+![Game](img/4.png)
+![Game Over](img/5.png)
+![Block Shapes](img/6.png)
 
 ## Game Mechanics
 
