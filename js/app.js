@@ -16,3 +16,13 @@ const levelDisplay = document.getElementById('level-display')
 const linesDisplay = document.getElementById('lines-display')
 const highscoreDisplay = document.getElementById('highscore-display')
 const gameoverDisplay = document.getElementById('game-over')
+
+// data variables
+let score = 0
+let level = 1
+let lines = 0
+let highscore = 0
+
+// arrays
+
+// event listeners
