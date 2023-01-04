@@ -27,7 +27,7 @@ let score = 0
 let level = 1
 let lines = 0
 let highscore = 0
-let status = 'playing'
+let gameStatus = 'playing'
 
 // setting game board
 const boardWidth = 12
@@ -35,11 +35,20 @@ const boardHeight = 20
 const startX = 4
 const startY = 0
 
-// arrays
+// create a multidimensional array for square coordinates
+let boardCoordinates = [...Array(boardHeight)].map(e => Array(boardWidth).fill(0))
+
+console.log(boardCoordinates)
 
 // pause game
 
 // reset game 
+const resetGame = () => {
+    score = 0
+    level = 1
+    lines = 0
+    gameStatus = 'playing'
+}
 
 // event listeners
 
@@ -57,3 +66,7 @@ arrow2.addEventListener('click', () => {
     controlsPage.classList.toggle('hide')
     gamePage.classList.toggle('hide')
 })
+
+// pauseButton.addEventListener('click', )
+
+restartButton.addEventListener('click', resetGame)
