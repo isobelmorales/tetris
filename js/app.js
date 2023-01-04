@@ -26,6 +26,13 @@ let score = 0
 let level = 1
 let lines = 0
 let highscore = 0
+let status = 'playing'
+
+// setting game board
+const boardWidth = 12
+const boardHeight = 20
+const startX = 4
+const startY = 0
 
 // arrays
 
