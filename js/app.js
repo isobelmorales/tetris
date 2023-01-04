@@ -5,6 +5,7 @@ const controlsPage = document.getElementById('controls-page')
 const gamePage = document.getElementById('game-page')
 
 // buttons
+const playButton = document.getElementById('play')
 const arrow1 = document.getElementById('arrow-1')
 const arrow2 = document.getElementById('arrow-2')
 const pauseButton = document.getElementById('pause')
@@ -41,3 +42,8 @@ const startY = 0
 // reset game 
 
 // event listeners
+
+playButton.addEventListener('click', () => {
+    landingPage.classList.toggle('hide')
+    instructionsPage.classList.toggle('hide')
+})
