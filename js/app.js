@@ -47,3 +47,8 @@ playButton.addEventListener('click', () => {
     landingPage.classList.toggle('hide')
     instructionsPage.classList.toggle('hide')
 })
+
+arrow1.addEventListener('click', () => {
+    instructionsPage.classList.toggle('hide')
+    controlsPage.classList.toggle('hide')
+})
