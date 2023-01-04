@@ -52,3 +52,8 @@ arrow1.addEventListener('click', () => {
     instructionsPage.classList.toggle('hide')
     controlsPage.classList.toggle('hide')
 })
+
+arrow2.addEventListener('click', () => {
+    controlsPage.classList.toggle('hide')
+    gamePage.classList.toggle('hide')
+})
