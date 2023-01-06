@@ -1,3 +1,5 @@
+//// DOM ELEMENTS ////
+
 // pages
 const landingPage = document.getElementById('landing-page')
 const instructionsPage = document.getElementById('instructions-page')
@@ -18,9 +20,13 @@ const linesDisplay = document.getElementById('lines')
 const highscoreDisplay = document.getElementById('highscore')
 const gameoverDisplay = document.getElementById('game-over')
 
-// setting canvas
+//// CANVAS ////
+
+// setting context
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
+
+//// VARIABLES ////
 
 // data variables
 let score = 0
@@ -29,6 +35,7 @@ let lines = 0
 let highscore = 0
 let gameStatus = 'playing'
 let currentBlock = null
+
 
 // setting game board
 const squaresAcross = 12
@@ -46,10 +53,9 @@ const iBlock = [[0,0], [1,0], [2,0], [3,0]]
 const rBlock = [[0,0], [0,1], [1,1], [2,1]]
 const gamePieces = [zBlock, sBlock, oBlock, lBlock, tBlock, iBlock, rBlock]
 
-// create a multidimensional array for square coordinates - consists of 20 items, each items is an array with 12 items
+//// DEFINING BOARD GRID ////
+// array for square coordinates that consists of 20 items, each items is an array with 12 items
 const boardCoordinates = [...Array(squaresDown)].map(e => Array(squaresAcross).fill(0))
-
-console.log(boardCoordinates)
 
 // coordinates class
 class blockCoordinates {
@@ -59,9 +65,31 @@ class blockCoordinates {
     }
 }
 
-// create game board
+// create coordinate map for blocks
+const createCoordinateMap = () => {
+    let i = 0
+    let j = 0
+    for(let y = 9; y <= 446; y += 23) {
+        for(let x = 11; x <= 264; x += 23) {
+            boardCoordinates[i][j] = new blockCoordinates(x,y)
+            i++
+        }
+        j++
+        i = 0
+    }
+}
+
+//// GAME FUNCTIONS ////
+
+// setting game canvas
 const setupCanvas = () => {
-    
+    canvas.width = 936
+    canvas.height = 956
+
+    ctx.scale(2,2)
+
+    ctx.fillStyle = '#545454'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
 }
 
 // pause game
@@ -74,7 +102,7 @@ const resetGame = () => {
     gameStatus = 'playing'
 }
 
-// event listeners
+//// EVENT LISTENERS ////
 
 playButton.addEventListener('click', () => {
     landingPage.classList.toggle('hide')
@@ -92,6 +120,6 @@ arrow2.addEventListener('click', () => {
     setupCanvas()
 })
 
-// pauseButton.addEventListener('click', )
+//# pauseButton.addEventListener('click', )
 
 restartButton.addEventListener('click', resetGame)
