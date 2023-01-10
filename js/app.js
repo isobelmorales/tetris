@@ -133,7 +133,9 @@ const updateScore = () => {
     }
     player.lines = player.score/100
     linesDisplay.innerText = player.lines
-    player.level += 1
+    if(player.lines > 0){
+        player.level = ((player.lines - (player.lines%5))/5)+1
+    }
     levelDisplay.innerText = player.level
 }
 
