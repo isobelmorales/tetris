@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* img {
-    width: 100%;
-} */
-
-
 body {
     background: black;
     color: white;
@@ -25,14 +20,12 @@ body {
 h3 {
     font-size: 42px;
     color: #1F58DB;
-    /* text-transform: lowercase; */
     padding: 20px;
 }
 
 h3:hover {
     font-size: 45px;
     color: #556ca1;
-    /* text-transform: lowercase; */
     cursor: pointer;
 }
 
@@ -65,25 +58,48 @@ p {
     padding: 25px; */
 }
 
+#game-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
 #left-panel {
-    position: fixed;
-    left: 150px;
+    /* position: fixed;
+    left: 150px; */
     padding: 20px;
+    background: #545454;
+    border-radius: 36px;
 }
 
 #left-panel p{
     font-size: 21px;
     margin: 15px 0;
+    padding: 15px 5px;
+    line-height: normal;
 }
 
 #right-panel {
-    position: fixed;
+    /* position: fixed;
     right: 0px;
-    bottom: 0px;
+    bottom: 0px; */
+    padding: 20px;
+    background: #545454;
+    border-radius: 36px;
 }
 
 #right-panel p{
     font-size: 21px;
+    padding: 15px 5px;
+    line-height: normal;
+}
+
+.display {
+    background: #272727;
+    border-radius: 36px;
+    width: 264px;
     margin: 15px 0;
 }
 
@@ -102,7 +118,6 @@ button {
 
 button:hover {
     background: rgba(255, 255, 255, 0.35);
-    border-radius: 5px;
     cursor: pointer;
 }
 
