@@ -4,69 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Tetris | Isobel Morales</title>
 </head>
 <body>
     <div id="landing-page">
-        <h1>Tetris</h1>
-        <button id="play">click to play</button>
+        <div id="title">
+            <span style="color:#FA233D">T</span>
+            <span style="color:#40D6FC">E</span>
+            <span style="color:#6BCB14">T</span>
+            <span style="color:#D138B4">R</span>
+            <span style="color:#FFBB1C">I</span>
+            <span style="color:#FF7700">S</span>
+        </div>
+        <h3 id="play">click to play</h3>
     </div>
     <div class="hide" id="instructions-page">
-        <h2>Instructions</h2>
+        <div class="subtitle">
+            <span style="color:#FA233D">I</span>
+            <span style="color:#FFBB1C">N</span>
+            <span style="color:#40D6FC">S</span>
+            <span style="color:#D138B4">T</span>
+            <span style="color:#FFBB1C">R</span>
+            <span style="color:#FA233D">U</span>
+            <span style="color:#6BCB14">C</span>
+            <span style="color:#40D6FC">T</span>
+            <span style="color:#FF7700">I</span>
+            <span style="color:#1F58DB">O</span>
+            <span style="color:#6BCB14">N</span>
+            <span style="color:#FF7700">S</span>
+        </div>
         <p>Move and rotate the falling blocks to fit them in the game board.</p>
         <p>To clear a line, fill every square within a single row.</p>
         <p>Earn points by clearing lines.</p>
         <p>If the blocks reach the top of the board, the game will end.</p>
-        <button class="arrow" id="arrow-1">-></button>
+        <h3 class="arrow" id="arrow-1">-></h3>
     </div>
     <div class="hide" id="controls-page">
-        <h2>Controls</h2>
-        <div id="controls-container">
-            <div id="controls-images">
-                <img src="" alt="up arrow">
-                <img src="" alt="z">
-                <img src="" alt="space">
-                <img src="" alt="down arrow">
-                <img src="" alt="left arrow">
-                <img src="" alt="right arrow">
-            </div>
-            <ul>
-                <li>Rotate right</li>
-                <li>Rotate left</li>
-                <li>Hard Drop</li>
-                <li>Soft Drop</li>
-                <li>Move left</li>
-                <li>Move right</li>
-            </ul>
+        <div class="subtitle">
+            <span style="color:#FA233D">C</span>
+            <span style="color:#FF7700">O</span>
+            <span style="color:#FFBB1C">N</span>
+            <span style="color:#6BCB14">T</span>
+            <span style="color:#40D6FC">R</span>
+            <span style="color:#1F58DB">O</span>
+            <span style="color:#D138B4">L</span>
+            <span style="color:#FA233D"">S</span>
         </div>
-        <button class="arrow" id="arrow-2">-></button>
+        <img src="./img/controls-2.png" alt="">
+        <h3 class="arrow" id="arrow-2">-></h3>
     </div>
     <div class="hide" id="game-page">
-        <h2>Tetris</h2>
+        <div class="subtitle">
+            <span style="color:#FA233D">T</span>
+            <span style="color:#40D6FC">E</span>
+            <span style="color:#6BCB14">T</span>
+            <span style="color:#D138B4">R</span>
+            <span style="color:#FFBB1C">I</span>
+            <span style="color:#FF7700">S</span>
+        </div>
         <div id="game-container">
             <div id="left-panel">
-                <div class="panel-key">score</div>
-                <div class="panel-value" id="score">0</div>
-                <div class="panel-key">level</div>
-                <div class="panel-value" id="level">1</div>
-                <div class="panel-key">lines</div>
-                <div class="panel-value" id="lines">0</div>
+                <p>score</p>
+                <p id="score">0</p>
+                <p>level</p>
+                <p id="level">1</p>
+                <p>lines</p>
+                <p id="lines">0</p>
             </div>
             <div id="canvas-container">
                 <canvas id="canvas"></canvas>
-                <!-- Can transfer to a JS function later -->
-                <div id="game-over">Game Over</div> 
             </div>
             <div id="right-panel">
-                <div class="panel-key">highscore</div>
-                <div class="panel-value" id="highscore">0</div>
-                <button id="pause">pause</button>
-                <button id="restart">restart</button>
+                <p>highscore</p>
+                <p id="highscore">0</p>
+                <button id="pause">PAUSE</button>
+                <button id="reset">RESET</button>
             </div>
         </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <div style="display:none;">
+        <img id="tile-atlas" src="./img/tiles.png" width="1366px" height="768px"/>
+    </div>
+    <script src="./js/app.js"></script>
 </body>
 </html>
