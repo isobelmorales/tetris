@@ -2,11 +2,13 @@
 
 ## Overview
 
+![Preview](img/preview.png)
+
 A recreation of Tetris, a game where players are tasked with strategically placing blocks in order to clear lines and gain points before reaching the top of the board. 
 
 ### Link
 
-TBC
+https://isobelmorales.github.io/tetris/
 
 ### Technologies
 - HTML (Canvas)
@@ -52,29 +54,3 @@ As a user, I want the ability to:
 ![Game](img/4.png)
 ![Game Over](img/5.png)
 ![Block Shapes](img/6.png)
-
-## Game Mechanics
-
-This game will utilize HTML canvas to create the game board and pieces and event listeners to register keystrokes. 
-Context: 2d
-
-### Variables
-- boardHeight; boardWidth
-- startX; startY
-- score
-- level
-- highscore
-- isPaused
-### Arrays
-- board coordinates
-- current block
-- block colors
-- block shapes
-### Objects
-- keys
-- coordinates
-### Functions
-- createBoard
-### Event Listeners
-- reset: click
-- document: DOMContentLoaded, keydown
