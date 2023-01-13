@@ -21,6 +21,10 @@ const highscoreDisplay = document.getElementById('highscore')
 
 // canvas elements
 const canvas = document.getElementById('canvas')
+
+// an atlas of the images used for the tetromino shapes
+// each tile corresponds to a color of a game piece shape
+// each color/tile can be referenced by an index
 const tileAtlas = document.getElementById('tile-atlas')
 
 
@@ -31,15 +35,19 @@ const ctx = canvas.getContext('2d')
 canvas.width = 300
 canvas.height = 600
 
+// zooming into canvas so that tiles fit to the canvas size
 ctx.scale(30,30)
 
 //// OBJECTS ////
 
+// an object to store information about the player
 const player = {
+    // stores position of player's game piece (current tetromino) on the game board
     position: {
         x: 0,
         y: 0
     },
+    // stores the player's current game piece
     array: null,
     score: 0,
     level: 1,
@@ -47,6 +55,7 @@ const player = {
     highscore: 0
 }
 
+// an object to store information about the game
 const game = {
     pieces: ['z', 's', 'o', 'l', 't', 'i', 'j'],
     array: null,
@@ -55,10 +64,19 @@ const game = {
     pause: false
 }
 
+// makes the game array which is a matrix of 20 arrays with 10 items each aka 20 rows and 10 columns
+// each item in the array represents 1 tile in the game board
+// each item is filled with 0 so that the drawImage function knows which index in the tileAtlas to reference
 game.array = [...Array(20)].map(e => Array(10).fill(0))
 
 //// DETERMINE TETROMINO SHAPES ////
 
+// function that uses a switch case statement to return the shape pattern of the given game piece
+// the pattern is given in a matrix
+// the items with a value of 0 represent 'empty' tiles
+// the order that the values > 0 are in correspond to the shape of the game piece
+// each game piece has a different value which correlates to the index of the assigned color for the game piece 
+// giving the shape pattern in a matrix helps with movement handling and 
 const tetrominoShape = (piece) => {
     switch (piece) {
         case 'z': 
@@ -108,6 +126,8 @@ const tetrominoShape = (piece) => {
 
 //// CALCULATE POINTS + UPDATE SCORE ////
 
+// function to calculate points awarded to the player
+// players earn 100 points per line they clear
 const points = () => {
     let rowCount = 1
     let array = game.array
